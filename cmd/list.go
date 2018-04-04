@@ -66,6 +66,7 @@ func list(cmd *cobra.Command, args []string) error {
 
 func key(s string) string {
 	_, noPaths := os.LookupEnv("CHAMBER_NO_PATHS")
+
 	sep := "."
 	if !noPaths {
 		sep := "/"
