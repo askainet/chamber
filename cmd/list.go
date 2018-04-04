@@ -69,7 +69,7 @@ func key(s string) string {
 
 	sep := "."
 	if !noPaths {
-		sep := "/"
+		sep = "/"
 	}
 
 	tokens := strings.Split(s, sep)
