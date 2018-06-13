@@ -66,13 +66,13 @@ func list(cmd *cobra.Command, args []string) error {
 
 func key(s string) string {
 	_, noPaths := os.LookupEnv("CHAMBER_NO_PATHS")
+
+	sep := "."
 	if !noPaths {
-		tokens := strings.Split(s, "/")
-		secretKey := tokens[2]
-		return secretKey
+		sep = "/"
 	}
 
-	tokens := strings.Split(s, ".")
-	secretKey := tokens[1]
+	tokens := strings.Split(s, sep)
+	secretKey := tokens[len(tokens)-1]
 	return secretKey
 }
